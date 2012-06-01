@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts-min.css" />
+    <link type="text/css" rel="stylesheet" href="../assets/notifier.css" />
+    <script type="text/javascript" src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script>
+    <script type="text/javascript" src="../js/notifier.js"></script>
+    <style>
+        #booga { height: 200px; line-height: 200px; width: 450px; border: 2px solid #000; text-align: center; margin-bottom: 10px; border: solid;}
+        .tooga { height: 20px; line-height: 20px; width: 45px; border: 2px solid #000; text-align: center; margin-bottom: 1px; border: solid;}
+        </style>
+
+    </head>
+    <body>
+    <div id ="booga" class="">
+
+   </div>
+    <script>
+        YUI().use("notifier-gf", "widget", function(Y) {
+		  	var t = new Y.GF.Notifier({timeout:900000, position:"bottom-right"});
+		  	t.set("header","hSDFSDFSDFSDFSFSDFSDFSr .....");
+		  	t.set("message","Alert showing now...in render .....Alert howing now...in  .now...in render .....");
+            t.render();
+            
+            Y.one('#booga').on('click',function(e){
+            	t.set('message','from click');
+            	t.render();
+            })
+            	
+            
+           
+            
+        });
+        </script>
+    </body>
+</html>
+
+

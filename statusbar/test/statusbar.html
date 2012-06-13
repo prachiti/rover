@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts-min.css" />
+    <link type="text/css" rel="stylesheet" href="../assets/statusbar.css" />
+    <script type="text/javascript" src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script>
+    <script type="text/javascript" src="../js/statusbar.js"></script>
+    <style>
+        #booga { height: 10px; line-height: 200px; width: 450px; border: 2px solid #000; text-align: center; margin-bottom: 10px; border: solid;}
+        </style>
+
+    </head>
+    <body>
+    <div id ="booga" class="" />
+    <script>
+        YUI().use("statusbar", "widget", function(Y) {
+            var htmlText = '<input id="one" type="button" value="button"></input> <a href="http://www.yahoo.com/">Yahoo!</a> <input id="two"></input><input id="two" type="button" value="button"></input>';
+ 	  	var t = new Y.Statusbar({position:"right"});
+		  	t.set("message",htmlText);
+		    t.render();
+        });
+        </script>
+    </body>
+</html>
+
+

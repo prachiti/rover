@@ -1,38 +1,33 @@
-YUI.add("simplenotifier", function(Y) {
+YUI.add("statusbar", function(Y) {
 
    
     /* Notifier class constructor */
-    function SimpleNotifier(config) {
-        SimpleNotifier.superclass.constructor.apply(this, arguments);
+    function Statusbar(config) {
+        Statusbar.superclass.constructor.apply(this, arguments);
     }
 
-    SimpleNotifier.NAME = "SimpleNotifier";
+    Statusbar.NAME = "Statusbar";
 
-    SimpleNotifier.ATTRS = {
+    Statusbar.ATTRS = {
 
-         message : {
+         content : {
             value: ""
          },
-         
-         header : {
-        	 value: ""
-         },
-        
          position: {
-        	 value: "bottom-right"
+        	 value: "bottom"
          },
          
          timeout : {
-             value : 4000
+             value : undefined
          }
     };
  
-    SimpleNotifier.MARKUP = '<div class="yui3-notify-close"><a title="close">X</a></div>'+
-					  '<div class="yui3-simplenotifier-header  {header_show} ">{header}</div>' +
-					  '<div class="yui3-simplenotifier-message">{message}</div>';
+    Statusbar.MARKUP =  '<div class="yui3-gallery-statusbar-close"><a title="close">X</a></div>' +
+					    '<div class="yui3-gallery-statusbar-message ">{message}</div>';
+                        
     
     /* Notifier extends the base Widget class */
-    Y.extend(SimpleNotifier, Y.Widget, {
+    Y.extend(Statusbar, Y.Widget, {
     	
     	BOUNDING_TEMPLATE : '<div/>',
     	
@@ -50,25 +45,12 @@ YUI.add("simplenotifier", function(Y) {
 
         renderUI : function() {
     
-            var nmessage = this.get('message');
-            var nheader  = this.get('header');
-            var nheader_show;
-            if(nheader)   {
-            	nheader_show = "simplenotifier-header-show"; 
-            }else {
-            	nheader_show = "simplenotifier-header-noshow";
-            }  
-            
-            var simplenotifier_content = {
-            	message:  nmessage,
-                header:   nheader,
-                header_show: nheader_show
-            };
-            
-            this.get('contentBox').append(Y.Node.create(Y.substitute(SimpleNotifier.MARKUP, simplenotifier_content)));
+            var message = this.get('message');
+                            
+            this.get('contentBox').append(Y.Node.create(Y.substitute(Statusbar.MARKUP, message)));
             this.get('boundingBox').addClass(this.get('position'));
             
-            Y.one('.yui3-notify-close').on('click',function(e) {
+            Y.one('.yui3-gallery-statusbar-close').on('click',function(e) {
                 this.fire("closeEvent");
             },this);
 
@@ -76,7 +58,6 @@ YUI.add("simplenotifier", function(Y) {
 
         bindUI : function() {
               this.after("messageChange", this._afterMessageChange);
-              this.after("headerChange", this._afterHeaderChange);
               this._onHover();
         },
 	    
@@ -100,13 +81,14 @@ YUI.add("simplenotifier", function(Y) {
 
         syncUI : function() {
              this._uiSetMessage(this.get("message"));
-             this._uiSetHeader(this.get("header"));
-             this.timer = new Y.Timer({
-                 length: this.get("timeout"),
-                 repeatCount: 1,
-                 callback: Y.bind(this.hide, this)
-               });
-               this.timer.start();
+             if(this.timer !== undefined) {
+                 this.timer = new Y.Timer({
+                     length: this.get("timeout"),
+                     repeatCount: 1,
+                     callback: Y.bind(this.hide, this)
+                   });
+                   this.timer.start();
+              }
         },
         
         _onHover : function() {
@@ -140,22 +122,18 @@ YUI.add("simplenotifier", function(Y) {
         },
         _uiSetMessage : function(val) {
             /* Update the state of attrA in the UI (view) */
-            var content = Y.one('.yui3-simplenotifier-message');
-            content.set("innerHTML",val);
+            var message = Y.one('.yui3-gallery-statusbar-message');
+            message.set("innerHTML",val);
         },
-        _uiSetHeader : function(val) {
-            /* Update the state of attrA in the UI (view) */
-        	var header = Y.one('.yui3-simplenotifier-header');
-            header.set("innerHTML",val);
-        },
+       
         _defCloseEventFn:function(){
         	this.hide();
         }
 
     });
 
-    Y.SimpleNotifier = SimpleNotifier;
+    Y.Statusbar = Statusbar;
 
- }, "3.2.0", {requires:["widget", "substitute","node","dom","anim","gallery-timer"]});
+ }, "3.5.0", {requires:["widget", "substitute","node","dom","anim","gallery-timer"]});
 // END WRAPPER
 

@@ -16,20 +16,16 @@
 
    </div>
     <script>
-        YUI().use("notifier-gf", "widget", function(Y) {
-		  	var t = new Y.GF.Notifier({timeout:900000, position:"bottom-right"});
+        YUI().use("simplenotifier", "widget", function(Y) {
+		  	var t = new Y.SimpleNotifier({timeout:900000, position:"bottom"});
 		  	t.set("header","hSDFSDFSDFSDFSFSDFSDFSr .....");
-		  	t.set("message","Alert showing now...in render .....Alert howing now...in  .now...in render .....");
+		  	t.set("message","message in here....");
             t.render();
             
             Y.one('#booga').on('click',function(e){
             	t.set('message','from click');
             	t.render();
             })
-            	
-            
-           
-            
         });
         </script>
     </body>

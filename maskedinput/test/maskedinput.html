@@ -1,0 +1,26 @@
+<HTML>
+<head>
+<script type="text/javascript" src="http://yui.yahooapis.com/3.6.0pr1/build/yui/yui-min.js"></script>
+<script type="text/javascript" src="../js/maskedinput.js"></script>
+</head>
+<BODY>
+
+<div id="widget-extend-example">
+    A basic masked input widget: <input type="text" id="numberField" class="yui3-spinner-loading" value="20" />
+    <script type="text/javascript">
+    YUI().use("maskedinput", "event-key", "widget", function(Y) {
+        var maskedInput = new Y.MaskedInput({
+            srcNode: "#numberField",
+            mask: "##/##/####",
+            maxlength:8
+        });
+        maskedInput.render();
+        maskedInput.focus();
+    });
+});
+    
+    </script>
+</div>
+
+</BODY>
+</HTML>

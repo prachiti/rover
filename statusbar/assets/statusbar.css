@@ -1,0 +1,185 @@
+
+ .yui3-statusbar {
+    font-size: 12px;
+    position: fixed;
+	z-index: 9999;
+}
+
+.yui3-statusbar-content {
+background: rgb(149,149,149); /* Old browsers */
+background: -moz-linear-gradient(-45deg,  rgba(149,149,149,1) 0%, rgba(13,13,13,1) 46%, rgba(1,1,1,1) 50%, rgba(10,10,10,1) 53%, rgba(78,78,78,1) 76%, rgba(56,56,56,1) 87%, rgba(27,27,27,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(149,149,149,1)), color-stop(46%,rgba(13,13,13,1)), color-stop(50%,rgba(1,1,1,1)), color-stop(53%,rgba(10,10,10,1)), color-stop(76%,rgba(78,78,78,1)), color-stop(87%,rgba(56,56,56,1)), color-stop(100%,rgba(27,27,27,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%); /* IE10+ */
+background: linear-gradient(-45deg,  rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    color: white;
+}
+
+ .yui3-statusbar.bottom {
+	bottom: 0px;
+    left: 0px;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.yui3-statusbar.bottom .yui3-statusbar-content {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 12px;
+    
+}
+
+ .yui3-statusbar.top {
+    top: 0px;
+    left: 0px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.yui3-statusbar.top .yui3-statusbar-content {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 12px;
+}
+
+ .yui3-statusbar.right {
+	right: 0px;
+    width: 5%;
+    height:100%;
+}
+
+.yui3-statusbar.right .yui3-statusbar-content {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 0px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 90%;
+    width: 100%;
+    
+}
+
+.yui3-statusbar.right .yui3-gallery-statusbar-message {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    padding-top:12px;
+    padding-left:5px;
+}
+
+.yui3-statusbar.left {
+    left: 0px;
+    width: 5%;
+    height:100%;
+}
+
+.yui3-statusbar.left .yui3-statusbar-content {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 90%;
+    width: 100%;
+    
+}
+
+.yui3-statusbar.left .yui3-gallery-statusbar-message {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    padding-top:12px;
+}
+
+
+
+ .yui3-statusbar.top {
+	top: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.yui3-statusbar .yui3-gallery-statusbar-message {
+	font-size: .95em;
+}
+
+
+/** Hide notifier when printing **/
+@media print {
+	.yui3-statusbar {
+		display: none;
+	}
+}
+
+
+.yui3-statusbar { 
+	overflow: hidden;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	text-align: left;
+}
+
+.yui3-statusbar .yui3-gallery-statusbar-message {
+	width: 92%;
+	position:static;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+.yui3-statusbar:hover {
+	
+}
+
+.yui3-statusbar-content-divider-vert {
+
+    border-right: #999 1px solid;
+    width:1px;
+}
+
+.yui3-statusbar-content-divider-horiz {
+    overflow: visible;  
+    padding: 0;
+    font-size: 1px;
+    margin: 5px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid #313131;
+}
+
+.yui3-gallery-statusbar-message:hover  > .yui3-gallery-statusbar-close {
+	display:block;
+    background-color:#78777;
+}
+
+.yui3-statusbar a {
+	text-decoration: none;
+}
+
+.yui3-statusbar .yui3-gallery-statusbar-close {
+	float:right;
+    border: 2px solid;
+	cursor: pointer;
+	padding-left: 4px;
+	padding-right: 4px;
+	text-decoration: none;
+	font-weight: bold;
+	 -moz-border-radius: 0.5px;
+	-webkit-border-radius: 0.5px;
+	border-radius: 10px;
+	margin: 5px;
+	background-color:#787778;
+}
+
+
+

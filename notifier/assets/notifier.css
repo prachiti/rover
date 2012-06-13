@@ -1,66 +1,66 @@
 
- .yui3-notifier {
+ .yui3-simplenotifier {
 	
 	font-size: 12px;
 	position: absolute;
 	z-index: 9999;
 }
 
- .yui3-notifier.top-left {
+ .yui3-simplenotifier.top-left {
 	left: 0px;
 	top: 0px;
 }
 
- .yui3-notifier.top-right {
+ .yui3-simplenotifier.top-right {
 	right: 0px;
 	top: 0px;
 }
 
- .yui3-notifier.bottom-left {
+ .yui3-simplenotifier.bottom-left {
 	left: 0px;
 	bottom: 0px;
 }
 
- .yui3-notifier.bottom-right {
+ .yui3-simplenotifier.bottom-right {
 	right: 0px;
 	bottom: 0px;
 }
 
- .yui3-notifier.center {
+ .yui3-simplenotifier.center {
 	top: 0px;
 	width: 50%;
 	left: 25%;
 }
 
 
- .yui3-notifier-content .yui3-notifier-header {
+ .yui3-simplenotifier-content .yui3-simplenotifier-header {
 	font-weight: bold;
 	padding: 12px;
 	width: 92%;
 	
 }
-.notifier-header-show {
+.simplenotifier-header-show {
 	display: block;
 }
 
-.notifier-header-noshow {
+.simplenotifier-header-noshow {
 	display: none;
 }
 
 
-.yui3-notifier .yui3-notifier-message {
+.yui3-simplenotifier .yui3-simplenotifier-message {
 	font-size: .95em;
 }
 
 
 /** Hide notifier when printing **/
 @media print {
-	.yui3-notifier {
+	.yui3-simplenotifier {
 		display: none;
 	}
 }
 
-.yui3-notifier-content { 
+.yui3-simplenotifier-content { 
 	overflow: hidden;
 	text-align: center;
 	background-color: #000;
@@ -81,7 +81,7 @@
 	
 }
 
-.yui3-notifier .yui3-notifier-message {
+.yui3-simplenotifier .yui3-simplenotifier-message {
 	position: static;
 	color: #fffff;
 	padding: 12px;
@@ -93,23 +93,23 @@
 
 
 
-.yui3-notifier:hover {
+.yui3-simplenotifier:hover {
 	
 }
 	
-.yui3-notifier-content:hover  > .yui3-notify-close {
+.yui3-simplenotifier-content:hover  > .yui3-notify-close {
 	display:block;
 }
 
 
 
-.yui3-notifier a {
+.yui3-simplenotifier a {
 	text-decoration: none;
 }
 
 
 
-.yui3-notifier .yui3-notify-close {
+.yui3-simplenotifier .yui3-notify-close {
 	position:absolute;
 	border: 2px solid;
 	cursor: pointer;
@@ -129,35 +129,3 @@
 	
 }
 
-.spinner {
-	background: url("ajax-loader.gif") no-repeat scroll 100% 50% transparent;
-	float: left;
-	padding-left: 35px;
-	padding-right: 20px;
-	padding-top: 30px;
-}
-
-.hide_overlay {
-	display: block;
-	opacity: 0.5;
-	filter: Alpha(Opacity = 50);
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	height: 100%;
-	width: 100%;
-	background-color: grey;
-	z-index: 99;
-}
-
-.warning {
-	background-color: transparent;
-	background: url(alerts.png);
-	background-position: -35px -0px;
-}
-
-.error {
-	background-color: transparent;
-	background: url(alerts.png);
-	background-position: -0px -0px;
-}
